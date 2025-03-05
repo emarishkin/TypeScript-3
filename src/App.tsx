@@ -1,3 +1,4 @@
+import Card from "./components/Card"
 import Product from "./Product"
 import {products} from './products'
 
@@ -7,12 +8,10 @@ function App() {
     <>
       <h1>Vite + React</h1>
       <div>
-
-        {products.map((product)=><Product product={product} key={product.id}/>)}
-         {/* <Product product={products[0]}/>
-         <Product product={products[1]}/>
-         <Product product={products[2]}/> */}
-         
+        {products.map((product)=><Product product={product} key={product.id}/>)} 
+        <Card height={400} width={400}>
+        <button>Click</button>  
+        </Card>        
       </div>
     </>
   )
