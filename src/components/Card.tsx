@@ -1,15 +1,25 @@
+import { ReactNode } from "react"
+import {FC} from "react"
+
+
+export enum cardVariant{
+    noob='nood',
+    pro='pro'
+}
+
 
 interface CardProps{
     width:number
     height:number
-    children:React.ReactNode
+    children:ReactNode
+    variant:cardVariant
 }
 
 
-const Card = ({width,height,children}:CardProps) => {
+const Card:FC<CardProps> = ({width,height,children,variant}) => {
     return(
-        <div style={{width,height, backgroundColor:'red'}}>
-          {children}
+        <div style={{width,height,border:variant===cardVariant.pro?'22px solid black':'none',backgroundColor:variant===cardVariant.noob?'red':'green'}}>
+         {children}
         </div>
     )
 }
